@@ -14,7 +14,7 @@ ID = re.compile(r"^[a-z][a-z0-9_]{1,31}$")
 PATH = re.compile(r"^[A-Za-z0-9_\-.]+(/[A-Za-z0-9_\-.]+)*$")
 PERMS = {"chat", "players", "players.modify", "world.read", "world.write", "effects", "commands",
          "commands.run", "hud", "keys", "storage", "content",
-         "resources", "data", "gui", "network", "render"}
+         "resources", "data", "gui", "network", "render", "blockhiding"}
 ALLOWED_EXT = {".lua", ".json", ".png", ".md", ".txt", ".ogg", ".mcmeta", ".mcfunction", ".nbt"}
 MAX_FILE, MAX_TOTAL, MAX_FILES = 2 * 1024 * 1024, 16 * 1024 * 1024, 256
 API_MAJOR = 1

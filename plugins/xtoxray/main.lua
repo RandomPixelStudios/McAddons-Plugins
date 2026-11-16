@@ -1,135 +1,105 @@
--- X To Xray (plugin edition) by Random Pixel Studios.
--- Original mod: hides every non-whitelisted block in the chunk mesh (needs a mixin).
--- Plugin edition: scans the area around you and highlights whitelisted blocks through walls.
--- Same rule as the original: singleplayer, or servers that run this plugin too.
+-- X To Xray by Random Pixel Studios – plugin edition.
+-- Uses MC Addons' built-in block hiding (the same chunk-mesh technique as the mod).
 
 if mc.side == "server" then
-  -- Server half: tells clients that X-ray is allowed here.
-  mc.on("message", function(e)
-    if e.channel == "hello" and e.player then mc.net.send("allowed", { version = mc.plugin.version }, e.player) end
-  end)
+  -- Serverside: having X To Xray on the server allows players to use it here.
+  mc.on("player_join", function(e) mc.blockhiding.allow(e.player, true) end)
   return
 end
 
----------------------------------------------------------------- client half
-local DEFAULTS = require("blocks")
-local cfg = mc.storage.get("config") or {}
-cfg.radius = cfg.radius or 16
-if cfg.promotions == nil then cfg.promotions = true end
-cfg.blocks = cfg.blocks or {}
-for _, b in ipairs(DEFAULTS) do
-  if cfg.blocks[b.id] == nil then cfg.blocks[b.id] = { on = b.on, color = b.color } end
+---------------------------------------------------------------- client
+local DEFAULT_WHITELIST = {
+  "minecraft:coal_ore", "minecraft:deepslate_coal_ore", "minecraft:iron_ore", "minecraft:deepslate_iron_ore",
+  "minecraft:copper_ore", "minecraft:deepslate_copper_ore", "minecraft:gold_ore", "minecraft:deepslate_gold_ore",
+  "minecraft:redstone_ore", "minecraft:deepslate_redstone_ore", "minecraft:emerald_ore", "minecraft:deepslate_emerald_ore",
+  "minecraft:lapis_ore", "minecraft:deepslate_lapis_ore", "minecraft:diamond_ore", "minecraft:deepslate_diamond_ore",
+  "minecraft:nether_gold_ore", "minecraft:nether_quartz_ore", "minecraft:ancient_debris",
+  "minecraft:chest", "minecraft:trapped_chest", "minecraft:spawner", "minecraft:water", "minecraft:lava",
+}
+
+local function copy(t) local r = {} for i, v in ipairs(t) do r[i] = v end return r end
+local function defaults()
+  return { render_distance = 64, render_while_moving = true, night_vision = true, show_promotions = true,
+           whitelist = copy(DEFAULT_WHITELIST) }
 end
-local function save() mc.storage.set("config", cfg) end
 
-local active, serverAllows = false, false
-local found, scanning = {}, {}       -- finished scan / scan in progress
-local origin, layer = nil, 0
-local LAYERS_PER_TICK = 2
-local MAX_BOXES = 900
+local cfg = mc.storage.get("config") or defaults()
+for k, v in pairs(defaults()) do if cfg[k] == nil then cfg[k] = v end end
 
-local function allowed() return mc.singleplayer() or serverAllows end
-
-local function startScan()
-  local p = mc.players()[1]
-  if not p then return end
-  origin = { x = math.floor(p.x), y = math.floor(p.y), z = math.floor(p.z) }
-  layer, scanning = -cfg.radius, {}
+local function apply()
+  mc.storage.set("config", cfg)
+  mc.blockhiding.configure {
+    mode = "xray", blocks = cfg.whitelist, range = cfg.render_distance * 16,
+    night_vision = cfg.night_vision, while_moving = cfg.render_while_moving,
+  }
 end
+apply()
 
 local function toggle()
-  if not active and not allowed() then
+  if not mc.blockhiding.active() and not mc.blockhiding.allowed() then
     mc.tell("", "§cThe X To Xray Serverside Is Not Installed!")
     return
   end
-  active = not active
-  found = {}
-  if active then startScan() end
-  mc.actionbar("", active and "§aX-Ray ON" or "§cX-Ray OFF")
+  mc.blockhiding.set_active(not mc.blockhiding.active())
 end
 
--- incremental scan: a few horizontal layers per tick, so the game never stutters
-mc.on("tick", function()
-  if not active or not origin then return end
-  if not allowed() then active = false; found = {}; return end
-  local r = cfg.radius
-  for _ = 1, LAYERS_PER_TICK do
-    local y = origin.y + layer
-    for x = origin.x - r, origin.x + r do
-      for z = origin.z - r, origin.z + r do
-        local id = mc.world.get_block("", x, y, z)
-        local b = cfg.blocks[id]
-        if b and b.on and #scanning < MAX_BOXES then scanning[#scanning + 1] = { x, y, z, b.color } end
-      end
-    end
-    layer = layer + 1
-    if layer > r then
-      found = scanning
-      startScan()   -- start the next sweep around the new position
-      return
-    end
-  end
-end)
-
-mc.on("render", function()
-  if not active then return end
-  for _, f in ipairs(found) do
-    local x, y, z, c = f[1], f[2], f[3], f[4]
-    mc.render.box(x, y, z, x + 1, y + 1, z + 1, c, (c % 0x1000000) + 0x40000000, true)
-  end
-end)
-
-mc.on("hud", function(s)
-  if not active then return end
-  mc.hud.text(s.width / 2 - 40, 4, "§aX-Ray§r  " .. #found .. " blocks", 0xFFFFFFFF)
-end)
+mc.key("Toggle Xray", "x", toggle)
 
 mc.on("world_load", function()
-  serverAllows, active, found = false, false, {}
-  if not mc.singleplayer() then pcall(mc.net.send, "hello", {}) end
-  if cfg.promotions then
-    mc.tell("", "Support X To Xray By Subscribing On Youtube! §c[youtube.com/@RandomPixelStudios]")
+  if cfg.show_promotions then
+    mc.tell("", "Support X To Xray By Subscribing On Youtube! §c[YouTube] §7youtube.com/@RandomPixelStudios")
   end
 end)
 
-mc.on("message", function(e) if e.channel == "allowed" then serverAllows = true end end)
+---------------------------------------------------------------- config screen (same layout as the mod)
+local NAV_W, CX, SLOT = 120, 150, 20
+local open_config
 
----------------------------------------------------------------- settings screen
-local page = 0
-local function settings()
-  local ids = {}
-  for id in pairs(cfg.blocks) do ids[#ids + 1] = id end
-  table.sort(ids)
-  local perPage = 8
-  local pages = math.ceil(#ids / perPage)
-  page = math.max(0, math.min(page, pages - 1))
-  local w = {
-    { type = "label", x = 0, y = 2, text = "Range: " .. cfg.radius .. " blocks" },
-    { type = "button", x = 120, y = -3, w = 20, h = 18, label = "-", on_click = function() cfg.radius = math.max(4, cfg.radius - 4); save(); settings() end },
-    { type = "button", x = 144, y = -3, w = 20, h = 18, label = "+", on_click = function() cfg.radius = math.min(32, cfg.radius + 4); save(); settings() end },
-    { type = "button", x = 170, y = -3, w = 90, h = 18, label = "YT hints: " .. (cfg.promotions and "on" or "off"),
-      on_click = function() cfg.promotions = not cfg.promotions; save(); settings() end },
-  }
-  for i = 1, perPage do
-    local id = ids[page * perPage + i]
-    if not id then break end
-    local b, y = cfg.blocks[id], 20 + (i - 1) * 20
-    w[#w + 1] = { type = "rect", x = 0, y = y + 3, w = 10, h = 10, color = b.color }
-    w[#w + 1] = { type = "item", x = 14, y = y - 1, item = id }
-    w[#w + 1] = { type = "label", x = 34, y = y + 4, text = id:gsub("minecraft:", "") }
-    w[#w + 1] = { type = "button", x = 200, y = y, w = 60, h = 16, label = b.on and "§aShown" or "§7Hidden",
-      on_click = function() b.on = not b.on; save(); found = {}; settings() end }
-  end
-  local by = 20 + perPage * 20 + 4
-  w[#w + 1] = { type = "button", x = 0, y = by, w = 40, h = 18, label = "<", on_click = function() page = page - 1; settings() end }
-  w[#w + 1] = { type = "label", x = 50, y = by + 5, text = "Page " .. (page + 1) .. "/" .. pages }
-  w[#w + 1] = { type = "button", x = 110, y = by, w = 40, h = 18, label = ">", on_click = function() page = page + 1; settings() end }
-  w[#w + 1] = { type = "button", x = 180, y = by, w = 80, h = 18, label = "Reset", on_click = function()
-      cfg = { radius = 16, promotions = true, blocks = {} }
-      for _, d in ipairs(DEFAULTS) do cfg.blocks[d.id] = { on = d.on, color = d.color } end
-      save(); settings() end }
-  mc.gui.open { title = "X To Xray Settings", width = 260, height = by + 22, widgets = w }
+local function add_block(text)
+  text = (text or ""):gsub("^%s+", ""):gsub("%s+$", "")
+  if text == "" then return end
+  if not text:find(":") then text = "minecraft:" .. text end
+  for _, id in ipairs(cfg.whitelist) do if id == text then return end end
+  cfg.whitelist[#cfg.whitelist + 1] = text
+  apply()
 end
 
-mc.key("Toggle X-Ray boxes", "v", toggle)
-mc.key("X-Ray settings", "j", settings)
+open_config = function()
+  local width = mc.hud.width()
+  local cw = math.max(120, width - CX - 10)
+  local w = {
+    { type = "button", x = 10, y = 24, w = NAV_W, label = "Xray", enabled = false },
+    { type = "button", x = -70, y = 6, w = 60, label = "Done", on_click = function() apply(); mc.gui.close() end },
+
+    { type = "slider", x = CX, y = 30, w = math.min(200, cw), label = "Render Distance", min = 1, max = 64,
+      value = cfg.render_distance, on_change = function(e) cfg.render_distance = e.value end },
+    { type = "checkbox", x = CX, y = 60, label = "Render While Moving", checked = cfg.render_while_moving,
+      on_change = function(e) cfg.render_while_moving = e.value end },
+    { type = "checkbox", x = CX, y = 85, label = "Night Vision", checked = cfg.night_vision,
+      on_change = function(e) cfg.night_vision = e.value end },
+    { type = "checkbox", x = CX, y = 110, label = "Show YouTube Messages", checked = cfg.show_promotions,
+      on_change = function(e) cfg.show_promotions = e.value end },
+
+    { type = "label", x = CX, y = 145, text = "Whitelist", color = 0xFFAAAAAA },
+    { type = "input", id = "block", x = CX, y = 163, w = math.max(60, cw - 52), hint = "minecraft:diamond_block" },
+    { type = "button", x = CX + math.max(60, cw - 52) + 5, y = 163, w = 47, label = "Add",
+      on_click = function(e) add_block(e.inputs.block); open_config() end },
+  }
+  local cols = math.max(1, math.floor(cw / SLOT))
+  local gridY = 189
+  for i, id in ipairs(cfg.whitelist) do
+    local col, row = (i - 1) % cols, math.floor((i - 1) / cols)
+    w[#w + 1] = { type = "slot", x = CX + col * SLOT, y = gridY + row * SLOT, item = id,
+      on_click = function() table.remove(cfg.whitelist, i); apply(); open_config() end }
+  end
+  local resetY = gridY + 15 + math.ceil(#cfg.whitelist / cols) * SLOT + 10
+  w[#w + 1] = { type = "button", x = CX, y = resetY, w = math.min(200, cw), label = "Reset to Default",
+    on_click = function()
+      local keep = cfg.show_promotions
+      cfg = defaults(); cfg.show_promotions = keep
+      apply(); open_config()
+    end }
+  mc.gui.open { title = "X to Xray Config", fullscreen = true, show_title = false, widgets = w, on_close = apply }
+end
+
+mc.gui.menu_button("X To Xray Config", open_config)
