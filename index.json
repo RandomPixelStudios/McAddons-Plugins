@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-11-16T19:51:19+00:00",
+  "updated": "2026-11-16T19:54:36+00:00",
   "plugins": [
     {
       "id": "coords_hud",
@@ -23,13 +23,13 @@
       "files": [
         {
           "path": "main.lua",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/coords_hud/main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/coords_hud/main.lua",
           "sha256": "9edda3b72878f6ee38099c86cf2513bdfb0ea484a37e8950c78674704e68ba06",
           "size": 1062
         },
         {
           "path": "plugin.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/coords_hud/plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/coords_hud/plugin.json",
           "sha256": "fd3483e7702a0bfe8debab9c41b924a16cc18ba9d023fbdd6caa0f436dbd40b0",
           "size": 323
         }
@@ -56,13 +56,13 @@
       "files": [
         {
           "path": "main.lua",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/homes/main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/homes/main.lua",
           "sha256": "7f90c7e18d43309efc5e8043f536fb50ba7a8cd1a3201fd3cce623e598854596",
           "size": 1011
         },
         {
           "path": "plugin.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/homes/plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/homes/plugin.json",
           "sha256": "a7e2a35cacc247fa034b70b41ea28df419991dbd73fd7a8bd4031c73fe21e343",
           "size": 302
         }
@@ -87,66 +87,66 @@
         "effects",
         "commands"
       ],
-      "icon": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/ruby/icon.png",
+      "icon": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/ruby/icon.png",
       "repo": "https://github.com/RandomPixelStudios/McAddons-Plugins/tree/main/plugins/ruby",
       "files": [
         {
           "path": "icon.png",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/ruby/icon.png",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/ruby/icon.png",
           "sha256": "ec086ce65b142421568609bbf2c00f710da76a37f15d38e820e577b347a2d4cc",
           "size": 236
         },
         {
           "path": "main.lua",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/ruby/main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/ruby/main.lua",
           "sha256": "daf2589f19514a9678915fbb3d8816d5953281985937dca08bcaaad94e1c7354",
           "size": 625
         },
         {
           "path": "plugin.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/ruby/plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/ruby/plugin.json",
           "sha256": "dcf9f4a101d7e84c78ff892ef64a838639b8dd24cac03632c23da41ed3853580",
           "size": 1161
         },
         {
           "path": "assets/ruby/textures/block/ruby_block.png",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/ruby/assets/ruby/textures/block/ruby_block.png",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/ruby/assets/ruby/textures/block/ruby_block.png",
           "sha256": "7a6eb6a3aae3d9392d6e52b609ca91694fe807ea0f34ddf33d60a211843d2a3f",
           "size": 816
         },
         {
           "path": "assets/ruby/textures/block/ruby_ore.png",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/ruby/assets/ruby/textures/block/ruby_ore.png",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/ruby/assets/ruby/textures/block/ruby_ore.png",
           "sha256": "bfeec39cc647cb0d4b6797c373fbb7fd8229cc204060324a5c1a6ae80adecbdf",
           "size": 468
         },
         {
           "path": "assets/ruby/textures/item/ruby.png",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/ruby/assets/ruby/textures/item/ruby.png",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/ruby/assets/ruby/textures/item/ruby.png",
           "sha256": "ec086ce65b142421568609bbf2c00f710da76a37f15d38e820e577b347a2d4cc",
           "size": 236
         },
         {
           "path": "data/minecraft/tags/block/mineable/pickaxe.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/ruby/data/minecraft/tags/block/mineable/pickaxe.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/ruby/data/minecraft/tags/block/mineable/pickaxe.json",
           "sha256": "6ca7cbae93eaba3466087cfcb1dfa6999d5b9f85dea4b3f78f602ce54244ae75",
           "size": 69
         },
         {
           "path": "data/ruby/loot_table/blocks/ruby_ore.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/ruby/data/ruby/loot_table/blocks/ruby_ore.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/ruby/data/ruby/loot_table/blocks/ruby_ore.json",
           "sha256": "01353b654e06946bf9fa5ce580a6eb715a119c3d3f5ab44a5a547f71d33332a0",
           "size": 314
         },
         {
           "path": "data/ruby/recipe/ruby_block.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/ruby/data/ruby/recipe/ruby_block.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/ruby/data/ruby/recipe/ruby_block.json",
           "sha256": "1132fc2200e5da001d2e1bbfe20debca7a365cdfea7ccda022b7d7deb8a38b9c",
           "size": 154
         },
         {
           "path": "data/ruby/recipe/ruby_from_block.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/ruby/data/ruby/recipe/ruby_from_block.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/ruby/data/ruby/recipe/ruby_from_block.json",
           "sha256": "62e5e1bd87d17f8555c88af0f2a389b27e54ef38180eb4f5521139332b76a7ac",
           "size": 124
         }
@@ -173,13 +173,13 @@
       "files": [
         {
           "path": "main.lua",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/server_info/main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/server_info/main.lua",
           "sha256": "f2c32d2ea2671c30571fb9f4149732bb5af267023608bd54060bfb7521d368d2",
           "size": 806
         },
         {
           "path": "plugin.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/server_info/plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/server_info/plugin.json",
           "sha256": "e1b0847bdcb0aac5d3c5db29cafd530cf26c9e6e4534f1bdb37dcd6192f081fa",
           "size": 419
         }
@@ -208,13 +208,13 @@
       "files": [
         {
           "path": "main.lua",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/shop/main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/shop/main.lua",
           "sha256": "ab8370d2cd9124e77b49075c7b61b0155c9d78f784aa80d57e75aad1b18b6908",
           "size": 1389
         },
         {
           "path": "plugin.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/shop/plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/shop/plugin.json",
           "sha256": "4103e16bdba0066f3c3ddc34984b8d8e2708f035b17a8e2f254820125a55fb59",
           "size": 341
         }
@@ -239,13 +239,13 @@
       "files": [
         {
           "path": "main.lua",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/spawn_guard/main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/spawn_guard/main.lua",
           "sha256": "3c5adad805f14f78f7e705fe0186732d768062ebca6b57617d849835daba4f6a",
           "size": 554
         },
         {
           "path": "plugin.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/spawn_guard/plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/spawn_guard/plugin.json",
           "sha256": "2c49e7b6691a787e9117b7881c3488438d4f8edb454ed609d74a522b229cd600",
           "size": 312
         }
@@ -273,13 +273,13 @@
       "files": [
         {
           "path": "main.lua",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/vein_miner/main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/vein_miner/main.lua",
           "sha256": "dffaa4b42341adf4a8cf6f66db152536d3faf73b7c7070270d96ec4793110c3c",
           "size": 1915
         },
         {
           "path": "plugin.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/vein_miner/plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/vein_miner/plugin.json",
           "sha256": "1568c4188e55342d864418d2ad049f38c77fa57e0e9cf3e35978923c7d36cf0b",
           "size": 365
         }
@@ -308,13 +308,13 @@
       "files": [
         {
           "path": "main.lua",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/waypoints/main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/waypoints/main.lua",
           "sha256": "14e4911a8a2f204b49cd3008ec1f2f24d9d7e6c183a1b5ab5e89ad40daae08c3",
           "size": 2149
         },
         {
           "path": "plugin.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/waypoints/plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/waypoints/plugin.json",
           "sha256": "aa1f965577ac0df7aa9020050a5ae0b454e272ee9eb6a1a88844724ff0e80651",
           "size": 391
         }
@@ -341,13 +341,13 @@
       "files": [
         {
           "path": "main.lua",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/welcome/main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/welcome/main.lua",
           "sha256": "73727f2bc6937da998e119944433c03a83fc1304b4e9e1423177fdf37cd2214c",
           "size": 486
         },
         {
           "path": "plugin.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/welcome/plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/welcome/plugin.json",
           "sha256": "596df15f03acc8fd787a90c0c8b843084b5207eca8c4ec1b1f07cb7355b985e0",
           "size": 291
         }
@@ -374,30 +374,30 @@
         "network",
         "chat"
       ],
-      "icon": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/xtoxray/icon.png",
+      "icon": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/xtoxray/icon.png",
       "repo": "https://github.com/RandomPixelStudios/McAddons-Plugins/tree/main/plugins/xtoxray",
       "files": [
         {
           "path": "blocks.lua",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/xtoxray/blocks.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/xtoxray/blocks.lua",
           "sha256": "86867fe6a4b71bed6e47648116bcb5b7c33b463a39ec88fecb6bd3bf9a618a1e",
           "size": 1953
         },
         {
           "path": "icon.png",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/xtoxray/icon.png",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/xtoxray/icon.png",
           "sha256": "67e951a8efc28d2256f39477c0ce6eef27d9049ed8345419c5cd2b956ab202c9",
           "size": 143533
         },
         {
           "path": "main.lua",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/xtoxray/main.lua",
-          "sha256": "b5d361dadc6f4ec42a60d57da523564000cdca9aa8adeb19edd4790e21d32ca9",
-          "size": 5689
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/xtoxray/main.lua",
+          "sha256": "fe4838edddf984fcb59bda399ad9dcc7e01853cd7b08a13a4eb89d404910e599",
+          "size": 5684
         },
         {
           "path": "plugin.json",
-          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/01b231f7f4a5e85be9a1bce59b71e89eb13a086a/plugins/xtoxray/plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/f7725f5ba35f139f3b9e0bb33de13cf9c38d7976/plugins/xtoxray/plugin.json",
           "sha256": "0f6cba524e875a716030e4a8d0cbd3c40798c2cfe2edad3900f6352212fef3dd",
           "size": 517
         }
