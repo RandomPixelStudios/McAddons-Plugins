@@ -1,0 +1,10 @@
+{
+  "id": "coords_hud",
+  "name": "Coords HUD",
+  "version": "1.0.0",
+  "description": "Shows your coordinates, facing, biome-free light info and held item in a small overlay. Toggle with H.",
+  "authors": ["RandomPixelStudios"],
+  "api": "1.0",
+  "side": "client",
+  "permissions": ["hud", "keys", "players", "storage"]
+}

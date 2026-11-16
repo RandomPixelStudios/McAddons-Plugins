@@ -1,0 +1,10 @@
+{
+  "id": "homes",
+  "name": "Homes",
+  "version": "1.0.0",
+  "description": "/sethome [name], /home [name], /homes - saved per player, survives restarts.",
+  "authors": ["RandomPixelStudios"],
+  "api": "1.0",
+  "side": "server",
+  "permissions": ["commands", "players", "players.modify", "storage"]
+}

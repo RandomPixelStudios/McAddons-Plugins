@@ -1,0 +1,10 @@
+{
+  "id": "vein_miner",
+  "name": "Vein Miner",
+  "version": "1.0.0",
+  "description": "Sneak-free vein mining: breaking an ore breaks up to 32 connected ores of the same type and gives you the drops.",
+  "authors": ["RandomPixelStudios"],
+  "api": "1.0",
+  "side": "server",
+  "permissions": ["world.read", "world.write", "players", "players.modify", "effects"]
+}

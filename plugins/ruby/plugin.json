@@ -1,0 +1,14 @@
+{
+  "id": "ruby",
+  "name": "Ruby",
+  "version": "1.0.0",
+  "description": "Adds real new content: a Ruby item and a glowing Ruby Block. Right-click a ruby to heal 4 hearts. Shows how plugins register items/blocks (restart required for content).",
+  "authors": ["RandomPixelStudios"],
+  "api": "1.0",
+  "side": "both",
+  "permissions": ["content", "players", "players.modify", "effects", "commands"],
+  "content": {
+    "items": [ { "id": "ruby", "name": "Ruby", "max_stack": 64, "glint": true } ],
+    "blocks": [ { "id": "ruby_block", "name": "Ruby Block", "hardness": 5, "resistance": 6, "light": 10, "sound": "metal" } ]
+  }
+}

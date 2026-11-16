@@ -1,0 +1,10 @@
+{
+  "id": "welcome",
+  "name": "Welcome",
+  "version": "1.0.0",
+  "description": "Greets players when they join, with a sound and particles. Adds /hello.",
+  "authors": ["RandomPixelStudios"],
+  "api": "1.0",
+  "side": "server",
+  "permissions": ["chat", "players", "effects", "commands"]
+}

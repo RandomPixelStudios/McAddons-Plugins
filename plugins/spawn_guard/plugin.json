@@ -1,0 +1,10 @@
+{
+  "id": "spawn_guard",
+  "name": "Spawn Guard",
+  "version": "1.0.0",
+  "description": "Protects a 16-block radius around 0,0 in the overworld from non-op players (cancels breaking/using blocks).",
+  "authors": ["RandomPixelStudios"],
+  "api": "1.0",
+  "side": "server",
+  "permissions": ["players", "chat"]
+}
