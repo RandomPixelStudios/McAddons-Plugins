@@ -1,0 +1,204 @@
+{
+  "schema": 1,
+  "updated": "2026-11-16T18:28:48+00:00",
+  "plugins": [
+    {
+      "id": "coords_hud",
+      "name": "Coords HUD",
+      "version": "1.0.0",
+      "description": "Shows your coordinates, facing, biome-free light info and held item in a small overlay. Toggle with H.",
+      "authors": [
+        "RandomPixelStudios"
+      ],
+      "api": "1.0",
+      "side": "client",
+      "permissions": [
+        "hud",
+        "keys",
+        "players",
+        "storage"
+      ],
+      "icon": null,
+      "repo": "https://github.com/RandomPixelStudios/McAddons-Plugins/tree/main/plugins/coords_hud",
+      "files": [
+        {
+          "path": "main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/8d52a6dde514b2ed0df89e5b001c8f2f65fae66a/plugins/coords_hud/main.lua",
+          "sha256": "9edda3b72878f6ee38099c86cf2513bdfb0ea484a37e8950c78674704e68ba06",
+          "size": 1062
+        },
+        {
+          "path": "plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/8d52a6dde514b2ed0df89e5b001c8f2f65fae66a/plugins/coords_hud/plugin.json",
+          "sha256": "fd3483e7702a0bfe8debab9c41b924a16cc18ba9d023fbdd6caa0f436dbd40b0",
+          "size": 323
+        }
+      ]
+    },
+    {
+      "id": "homes",
+      "name": "Homes",
+      "version": "1.0.0",
+      "description": "/sethome [name], /home [name], /homes - saved per player, survives restarts.",
+      "authors": [
+        "RandomPixelStudios"
+      ],
+      "api": "1.0",
+      "side": "server",
+      "permissions": [
+        "commands",
+        "players",
+        "players.modify",
+        "storage"
+      ],
+      "icon": null,
+      "repo": "https://github.com/RandomPixelStudios/McAddons-Plugins/tree/main/plugins/homes",
+      "files": [
+        {
+          "path": "main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/8d52a6dde514b2ed0df89e5b001c8f2f65fae66a/plugins/homes/main.lua",
+          "sha256": "7f90c7e18d43309efc5e8043f536fb50ba7a8cd1a3201fd3cce623e598854596",
+          "size": 1011
+        },
+        {
+          "path": "plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/8d52a6dde514b2ed0df89e5b001c8f2f65fae66a/plugins/homes/plugin.json",
+          "sha256": "a7e2a35cacc247fa034b70b41ea28df419991dbd73fd7a8bd4031c73fe21e343",
+          "size": 302
+        }
+      ]
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "version": "1.0.0",
+      "description": "Adds real new content: a Ruby item and a glowing Ruby Block. Right-click a ruby to heal 4 hearts. Shows how plugins register items/blocks (restart required for content).",
+      "authors": [
+        "RandomPixelStudios"
+      ],
+      "api": "1.0",
+      "side": "both",
+      "permissions": [
+        "content",
+        "players",
+        "players.modify",
+        "effects",
+        "commands"
+      ],
+      "icon": null,
+      "repo": "https://github.com/RandomPixelStudios/McAddons-Plugins/tree/main/plugins/ruby",
+      "files": [
+        {
+          "path": "main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/8d52a6dde514b2ed0df89e5b001c8f2f65fae66a/plugins/ruby/main.lua",
+          "sha256": "daf2589f19514a9678915fbb3d8816d5953281985937dca08bcaaad94e1c7354",
+          "size": 625
+        },
+        {
+          "path": "plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/8d52a6dde514b2ed0df89e5b001c8f2f65fae66a/plugins/ruby/plugin.json",
+          "sha256": "e137434ba5ca1d741abfdbc7954ef0c0079c6464850e04f44545bf40fadfc384",
+          "size": 631
+        }
+      ]
+    },
+    {
+      "id": "spawn_guard",
+      "name": "Spawn Guard",
+      "version": "1.0.0",
+      "description": "Protects a 16-block radius around 0,0 in the overworld from non-op players (cancels breaking/using blocks).",
+      "authors": [
+        "RandomPixelStudios"
+      ],
+      "api": "1.0",
+      "side": "server",
+      "permissions": [
+        "players",
+        "chat"
+      ],
+      "icon": null,
+      "repo": "https://github.com/RandomPixelStudios/McAddons-Plugins/tree/main/plugins/spawn_guard",
+      "files": [
+        {
+          "path": "main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/8d52a6dde514b2ed0df89e5b001c8f2f65fae66a/plugins/spawn_guard/main.lua",
+          "sha256": "3c5adad805f14f78f7e705fe0186732d768062ebca6b57617d849835daba4f6a",
+          "size": 554
+        },
+        {
+          "path": "plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/8d52a6dde514b2ed0df89e5b001c8f2f65fae66a/plugins/spawn_guard/plugin.json",
+          "sha256": "2c49e7b6691a787e9117b7881c3488438d4f8edb454ed609d74a522b229cd600",
+          "size": 312
+        }
+      ]
+    },
+    {
+      "id": "vein_miner",
+      "name": "Vein Miner",
+      "version": "1.0.0",
+      "description": "Sneak-free vein mining: breaking an ore breaks up to 32 connected ores of the same type and gives you the drops.",
+      "authors": [
+        "RandomPixelStudios"
+      ],
+      "api": "1.0",
+      "side": "server",
+      "permissions": [
+        "world.read",
+        "world.write",
+        "players",
+        "players.modify",
+        "effects"
+      ],
+      "icon": null,
+      "repo": "https://github.com/RandomPixelStudios/McAddons-Plugins/tree/main/plugins/vein_miner",
+      "files": [
+        {
+          "path": "main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/8d52a6dde514b2ed0df89e5b001c8f2f65fae66a/plugins/vein_miner/main.lua",
+          "sha256": "dffaa4b42341adf4a8cf6f66db152536d3faf73b7c7070270d96ec4793110c3c",
+          "size": 1915
+        },
+        {
+          "path": "plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/8d52a6dde514b2ed0df89e5b001c8f2f65fae66a/plugins/vein_miner/plugin.json",
+          "sha256": "1568c4188e55342d864418d2ad049f38c77fa57e0e9cf3e35978923c7d36cf0b",
+          "size": 365
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "name": "Welcome",
+      "version": "1.0.0",
+      "description": "Greets players when they join, with a sound and particles. Adds /hello.",
+      "authors": [
+        "RandomPixelStudios"
+      ],
+      "api": "1.0",
+      "side": "server",
+      "permissions": [
+        "chat",
+        "players",
+        "effects",
+        "commands"
+      ],
+      "icon": null,
+      "repo": "https://github.com/RandomPixelStudios/McAddons-Plugins/tree/main/plugins/welcome",
+      "files": [
+        {
+          "path": "main.lua",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/8d52a6dde514b2ed0df89e5b001c8f2f65fae66a/plugins/welcome/main.lua",
+          "sha256": "73727f2bc6937da998e119944433c03a83fc1304b4e9e1423177fdf37cd2214c",
+          "size": 486
+        },
+        {
+          "path": "plugin.json",
+          "url": "https://raw.githubusercontent.com/RandomPixelStudios/McAddons-Plugins/8d52a6dde514b2ed0df89e5b001c8f2f65fae66a/plugins/welcome/plugin.json",
+          "sha256": "596df15f03acc8fd787a90c0c8b843084b5207eca8c4ec1b1f07cb7355b985e0",
+          "size": 291
+        }
+      ]
+    }
+  ]
+}
