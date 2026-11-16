@@ -1,0 +1,10 @@
+{
+  "id": "xtoxray",
+  "name": "X To Xray",
+  "version": "1.0.0",
+  "description": "The X To Xray mod by Random Pixel Studios as a plugin. Press X to highlight ores, chests and spawners through walls, J for settings (range, which blocks, colours). Works in singleplayer, and on servers only if the server also has this plugin installed.",
+  "authors": ["RandomPixelStudios"],
+  "api": "1.1",
+  "side": "both",
+  "permissions": ["keys", "render", "hud", "gui", "world.read", "players", "storage", "network", "chat"]
+}
