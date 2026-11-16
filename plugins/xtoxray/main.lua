@@ -131,5 +131,5 @@ local function settings()
   mc.gui.open { title = "X To Xray Settings", width = 260, height = by + 22, widgets = w }
 end
 
-mc.key("Toggle X-Ray", "x", toggle)
+mc.key("Toggle X-Ray boxes", "v", toggle)
 mc.key("X-Ray settings", "j", settings)
