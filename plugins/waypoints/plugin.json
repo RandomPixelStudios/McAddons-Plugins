@@ -1,0 +1,10 @@
+{
+  "id": "waypoints",
+  "name": "Waypoints",
+  "version": "1.0.0",
+  "description": "Press B to save a waypoint, N to manage them. Waypoints are drawn as glowing boxes with names in the world. Shows world rendering, custom screens and keys.",
+  "authors": ["RandomPixelStudios"],
+  "api": "1.1",
+  "side": "client",
+  "permissions": ["keys", "gui", "render", "players", "storage", "hud"]
+}

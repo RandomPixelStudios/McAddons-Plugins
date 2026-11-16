@@ -19,7 +19,8 @@ python3 scripts/build_index.py --check   # same validation CI runs
 
 ## Rules
 
-* Only `.lua .json .png .md .txt`, max 512 KiB per file, 4 MiB per plugin.
+* Allowed: `.lua .json .png .ogg .mcmeta .mcfunction .nbt .md .txt`, max 2 MiB per file, 16 MiB per plugin.
+* `assets/` needs the `resources` permission, `data/` needs `data`.
 * Request the smallest set of permissions you need. `commands.run` (run any command as console) gets extra scrutiny.
 * No obfuscated code.
 

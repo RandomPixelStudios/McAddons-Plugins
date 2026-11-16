@@ -13,9 +13,10 @@ import argparse, hashlib, json, os, re, shutil, subprocess, sys, datetime
 ID = re.compile(r"^[a-z][a-z0-9_]{1,31}$")
 PATH = re.compile(r"^[A-Za-z0-9_\-.]+(/[A-Za-z0-9_\-.]+)*$")
 PERMS = {"chat", "players", "players.modify", "world.read", "world.write", "effects", "commands",
-         "commands.run", "hud", "keys", "storage", "content"}
-ALLOWED_EXT = {".lua", ".json", ".png", ".md", ".txt"}
-MAX_FILE, MAX_TOTAL, MAX_FILES = 512 * 1024, 4 * 1024 * 1024, 64
+         "commands.run", "hud", "keys", "storage", "content",
+         "resources", "data", "gui", "network", "render"}
+ALLOWED_EXT = {".lua", ".json", ".png", ".md", ".txt", ".ogg", ".mcmeta", ".mcfunction", ".nbt"}
+MAX_FILE, MAX_TOTAL, MAX_FILES = 2 * 1024 * 1024, 16 * 1024 * 1024, 256
 API_MAJOR = 1
 
 def fail(errors, pid, msg):
@@ -60,8 +61,12 @@ def main():
         for p in perms:
             if p not in PERMS: fail(errors, pid, f"unknown permission {p}")
         content = m.get("content") or {}
-        if (content.get("items") or content.get("blocks")) and "content" not in perms:
-            fail(errors, pid, "items/blocks need the 'content' permission")
+        if any(content.get(k) for k in ("items", "blocks", "ores", "loot")) and "content" not in perms:
+            fail(errors, pid, "items/blocks/ores/loot need the 'content' permission")
+        if os.path.isdir(os.path.join(d, "assets")) and "resources" not in perms:
+            fail(errors, pid, "an assets/ folder needs the 'resources' permission")
+        if os.path.isdir(os.path.join(d, "data")) and "data" not in perms:
+            fail(errors, pid, "a data/ folder needs the 'data' permission")
         if m.get("side", "both") not in ("server", "client", "both"): fail(errors, pid, "side must be server/client/both")
         entry = m.get("entry", "main.lua")
         if not os.path.isfile(os.path.join(d, entry)): fail(errors, pid, f"entry {entry} missing")

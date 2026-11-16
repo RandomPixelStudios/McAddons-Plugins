@@ -1,0 +1,10 @@
+{
+  "id": "server_info",
+  "name": "Server Info HUD",
+  "version": "1.0.0",
+  "description": "The server half sends player count and world time to every client every 2 seconds; the client half shows it on the HUD. Shows server-client networking between the two halves of one plugin.",
+  "authors": ["RandomPixelStudios"],
+  "api": "1.1",
+  "side": "both",
+  "permissions": ["network", "players", "world.read", "hud"]
+}

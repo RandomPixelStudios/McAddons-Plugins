@@ -1,0 +1,10 @@
+{
+  "id": "shop",
+  "name": "Emerald Shop",
+  "version": "1.0.0",
+  "description": "/shop opens a chest menu where players trade emeralds for items. Shows custom inventory menus.",
+  "authors": ["RandomPixelStudios"],
+  "api": "1.1",
+  "side": "server",
+  "permissions": ["commands", "gui", "players", "players.modify", "chat", "effects"]
+}
