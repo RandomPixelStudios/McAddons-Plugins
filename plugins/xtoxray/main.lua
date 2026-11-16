@@ -107,7 +107,7 @@ local function settings()
     { type = "label", x = 0, y = 2, text = "Range: " .. cfg.radius .. " blocks" },
     { type = "button", x = 120, y = -3, w = 20, h = 18, label = "-", on_click = function() cfg.radius = math.max(4, cfg.radius - 4); save(); settings() end },
     { type = "button", x = 144, y = -3, w = 20, h = 18, label = "+", on_click = function() cfg.radius = math.min(32, cfg.radius + 4); save(); settings() end },
-    { type = "button", x = 170, y = -3, w = 90, h = 18, label = "YouTube hints: " .. (cfg.promotions and "on" or "off"),
+    { type = "button", x = 170, y = -3, w = 90, h = 18, label = "YT hints: " .. (cfg.promotions and "on" or "off"),
       on_click = function() cfg.promotions = not cfg.promotions; save(); settings() end },
   }
   for i = 1, perPage do
